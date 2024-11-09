@@ -59,7 +59,7 @@ class Program
         // float listAverage = ((float)listTotal / numbers.Count);           
         // Console.WriteLine($"The average is: {listAverage}");
         
-        // max variation 1:
+        // max variation 1: using Max()
         // int maxNumber = numbers.Max();
         // Console.WriteLine($"The largest number is: {maxNumber}");
 
