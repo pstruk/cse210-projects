@@ -2,17 +2,37 @@ using System;
 
 class Program
 {
-    
     static void Main(string[] args)
     {
-        string scriptureVerse = "Trust in the Lord with all thine heart; and lean not unto thine own understanding. " + 
-                                "In all thy ways acknowledge him, and he shall direct thy paths.";
-
-        Reference reference = new Reference("Proverbs", 3, 5, 6);
-        Scripture scripture = new Scripture(reference, scriptureVerse);
-
-
-              
+        ScriptureLibrary verse = new ScriptureLibrary();  
+        Scripture scripture = verse.GetScripture();
         
+        while (true)
+        {
+            Console.Clear();
+            Console.WriteLine(scripture.GetDisplayText());
+            Console.WriteLine("\nPress the Enter key to continue, or type 'quit' to finish:\n");
+            
+            if (scripture.IsCompletelyHidden() == true)
+            {
+                Environment.Exit(0);
+            }                      
+            
+            string userInput = Console.ReadLine();
+            
+            switch (userInput.ToLower())
+            {
+                case "": 
+                    scripture.HideRandomWords(3);    // Removes 3 random words
+                    break;
+                case "quit":
+                    Environment.Exit(0);
+                    break;
+                default:
+                    Console.WriteLine("That is not a valid input. To exit type the word: quit");
+                    Console.ReadLine();
+                    break;              
+            } 
+        }
     }
-}
+} 
