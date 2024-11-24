@@ -1,3 +1,5 @@
+//I created a ScriptureLibrary to work with my scripture memorizer program to add a creativity component and to exceed the requirements.
+
 using System;
 
 class Program
