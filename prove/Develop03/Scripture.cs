@@ -5,8 +5,8 @@ public class Scripture
 {
     private Reference _reference;
     private List<Word> _words = new List<Word>();
-    private Random randomNum = new Random();
-    private HashSet<int> uniqueIndexes = new HashSet<int>();
+    private Random _randomNum = new Random();
+    private HashSet<int> _uniqueIndexes = new HashSet<int>();
 
     public Scripture(Reference reference, string text)
     {
@@ -39,13 +39,13 @@ public class Scripture
         int wordsTotal = _words.Count;
         int randomNumber = -1;
         
-        while (uniqueIndexes.Count < wordsTotal) 
+        while (_uniqueIndexes.Count < wordsTotal) 
         {
-            randomNumber = randomNum.Next(0, wordsTotal);
+            randomNumber = _randomNum.Next(0, wordsTotal);
             
-            if(!uniqueIndexes.Contains(randomNumber))
+            if(!_uniqueIndexes.Contains(randomNumber))
             {
-                uniqueIndexes.Add(randomNumber);
+                _uniqueIndexes.Add(randomNumber);
                 return randomNumber;
             }                  
         } 
