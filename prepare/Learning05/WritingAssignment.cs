@@ -16,4 +16,5 @@ public class WritingAssignment : Assignment
         // GetStudentName() getter method to return the name
         return $"{_title} by {GetStudentName()}";
     }
+    
 }
