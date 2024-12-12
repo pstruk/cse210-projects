@@ -16,11 +16,4 @@ public class Rectangle : Shape
     {
         return _length * _width;
     }
-
-
-
-
-
-
-
 }
