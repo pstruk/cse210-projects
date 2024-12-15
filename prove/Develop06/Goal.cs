@@ -17,11 +17,30 @@ public abstract class Goal{
     
     public abstract bool IsComplete();
     
-    public virtual string GetDetailsString()
-    {
-        return "";
-    }
-
     public abstract string GetStringRepresentation();
     
+    public virtual string GetDetailsString()
+    {
+        return $"{_shortName} ({_description})";
+    }
+    
+    public string GetShortName()
+    {
+        return _shortName;
+    }
+
+    public string GetDescription()
+    {
+        return _description;
+    }
+    
+    public string GetPoints()
+    {
+        return _points;
+    }
+
+    public virtual int GetParsedPoints()
+    {
+        return int.Parse(_points);
+    }
 }
